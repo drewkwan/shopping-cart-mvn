@@ -36,7 +36,7 @@ public class App
             String[] terms = input.split(" ");
             String cmd = terms[0];
 
-            switch(cmd.toLowerCase()) {
+            switch(cmd.toLowerCase()) { //add has mistake sad
                 case "add":
                     //ensure readability of the typed commands
                     String fruitsStr = terms[1]; 
@@ -48,18 +48,18 @@ public class App
                         boolean found = false;
                         //cart cannot be empty?
                         for (int j = 0; j < cart.size(); j++) { //use size not length for lists
-                            if (fruits[i].toUpperCase().equals(cart.get(j).toUpperCase()))
-                            System.out.printf("That item is already in your cart!");
+                            if (fruits[i].toUpperCase().equals(cart.get(j).toUpperCase())) {
+                            System.out.println("That item is already in your cart!");
                             found = true;// what's this for?
 
                             break;
+                            } 
                         }
-
+                        
                         if (!found) {
                             cart.add(fruits[i]);
-                            System.out.printf("%s has been added to your cart successfully!", fruits[i]); //print receipt
-                        } 
-
+                            System.out.printf("%s has been added to your cart successfully!", fruits[i]); //print receiptt
+                        }
                     }
 
                     break; //write your break after your case first if you're going to need it. Track your lil brackets. 
@@ -115,7 +115,7 @@ public class App
                      //for default, we want to print a message if the command is not recognised
                      System.out.println("Invalid command!");                
                 }
-                System.out.println("");
+                System.out.println(""); //aesthetic spacing
          } 
          System.out.println("Thank you for shopping with us!"); //print thank you message before you quit. Test moving this around.
     }
