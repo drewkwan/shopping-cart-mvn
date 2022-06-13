@@ -104,9 +104,19 @@ public class App
                      } 
 
                     break;
-
                 
+                case "end":
+                    /* For the end scenario, we just want to make stop true and break the loop. Print a thank you message */
+                    stop = true;
+                
+                    break;
+                    
+                default:
+                     //for default, we want to print a message if the command is not recognised
+                     System.out.println("Invalid command!");                
                 }
-         }
+                System.out.println("");
+         } 
+         System.out.println("Thank you for shopping with us!"); //print thank you message before you quit. Test moving this around.
     }
 }
