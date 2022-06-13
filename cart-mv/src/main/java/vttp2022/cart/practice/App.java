@@ -10,6 +10,9 @@ import java.util.List;
  */
 public class App 
 {
+    public static void showNoSuchItemToDel() {
+        System.out.println("No such item to delete.");
+    }
     public static void main( String[] args )
     {
         //define objects - Linked list, console, input command, delIndex, stop
@@ -72,12 +75,38 @@ public class App
                             System.out.printf("%d. %s\n", i+1, cart.get(i));    
                         }
                     }
+
+                    break;
+                
+                case "del":
+                    /* for delete, we want to be able to remove items from the cart using the indicated index number. if they use words, throw an error? (?)
+                     * first, account that the command has an element.
+                    */
+                    if (terms.length <2 ) {
+                        System.out.printf("Please provide an index to delete an item");
+                    } else {
+                        try{
+                            delIndex = Integer.parseInt(terms[1]) -1;
+                            System.out.println(delIndex);
+                            if (delIndex >= 0 && delIndex < cart.size()) {
+                            //print receipt
+                            System.out.printf("Deleted %s from cart.\n", cart.get(delIndex));
+                            //remove item
+                            cart.remove(delIndex);
+                        } else {
+                            showNoSuchItemToDel();
+                        }
+
+                    } catch(NumberFormatException e) {
+                        showNoSuchItemToDel();       
+                        }
+                     
+                     } 
+
                     break;
 
                 
-            }
-        
-        }
-
+                }
+         }
     }
 }
