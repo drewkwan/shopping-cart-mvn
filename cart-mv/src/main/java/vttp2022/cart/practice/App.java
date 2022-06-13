@@ -36,7 +36,7 @@ public class App
             String[] terms = input.split(" ");
             String cmd = terms[0];
 
-            switch(cmd.toLowerCase()) { //add has mistake sad
+            switch(cmd.toLowerCase()) { 
                 case "add":
                     //ensure readability of the typed commands
                     String fruitsStr = terms[1]; 
