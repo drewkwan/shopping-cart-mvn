@@ -97,7 +97,8 @@ public class App
                             showNoSuchItemToDel();
                         }
 
-                    } catch(NumberFormatException e) {
+                    } catch(NumberFormatException e) { 
+                        //because we're parsing an integer, we should do a number format error catch in case someone passes a string
                         showNoSuchItemToDel();       
                         }
                      
